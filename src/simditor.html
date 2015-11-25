@@ -11,18 +11,13 @@
     <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor.js"></script>
   </head>
   <body>
-    <!-- <div>
-      <center>
-        Testing Simditor
-      </center>
-    </div> -->
-
 
     <textarea id="editor" placeholder="Balabala" autofocus></textarea>
     <script>
       var editor = new Simditor({
-        textarea: $('#editor')
+        textarea: $('#editor'),
         //optional options
+        placeholder: 'Simditor BeautifulReading',
       });
     </script>
 
