@@ -121,9 +121,14 @@ SimditorMarkdown = (function(superClass) {
     return this.textarea.height(this.textarea[0].scrollHeight - this._textareaPadding);
   };
 
+  SimditorMarkdown.prototype.getMarkDown = function() {
+    console.log(this.textarea.val());
+  };
+
   SimditorMarkdown.prototype._convert = function() {
     var markdownText, text;
     text = this.textarea.val();
+    console.log(text);
     markdownText = marked(text);
     this.editor.textarea.val(markdownText);
     this.editor.body.html(markdownText);

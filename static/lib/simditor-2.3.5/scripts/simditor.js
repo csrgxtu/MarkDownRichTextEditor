@@ -2581,6 +2581,10 @@ Simditor = (function(superClass) {
     return this.sync();
   };
 
+  Simditor.prototype.getMarkDown = function() {
+    return this.textarea.val()
+  };
+
   Simditor.prototype.sync = function() {
     var children, cloneBody, emptyP, firstP, lastP, val;
     cloneBody = this.body.clone();
