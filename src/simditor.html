@@ -9,15 +9,24 @@
     <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/hotkeys.js"></script>
     <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/uploader.js"></script>
     <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor.js"></script>
+
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/marked.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/to-markdown.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor-markdown.js"></script>
+
+    <link rel="stylesheet" href="../static/lib/simditor-2.3.5/styles/simditor-markdown.css" media="screen" charset="utf-8" />
+
   </head>
   <body>
+    <br />
+    <br />
 
     <textarea id="editor" placeholder="Balabala" autofocus></textarea>
     <script>
       var editor = new Simditor({
         textarea: $('#editor'),
-        //optional options
-        placeholder: 'Simditor BeautifulReading',
+        // markdown: true,
+        toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown']
       });
     </script>
 
