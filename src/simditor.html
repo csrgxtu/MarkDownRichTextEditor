@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>simditor</title>
+
+    <link rel="stylesheet" type="text/css" href="../static/lib/simditor-2.3.5/styles/simditor.css" />
+
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/module.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/hotkeys.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/uploader.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor.js"></script>
+  </head>
+  <body>
+    <!-- <div>
+      <center>
+        Testing Simditor
+      </center>
+    </div> -->
+
+
+    <textarea id="editor" placeholder="Balabala" autofocus></textarea>
+    <script>
+      var editor = new Simditor({
+        textarea: $('#editor')
+        //optional options
+      });
+    </script>
+
+
+  </body>
+</html>
