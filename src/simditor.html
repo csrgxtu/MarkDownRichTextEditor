@@ -19,6 +19,12 @@
 
     <link rel="stylesheet" href="../static/lib/simditor-2.3.5/styles/simditor-markdown.css" media="screen" charset="utf-8" />
 
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor-fullscreen.js"></script>
+    <link rel="stylesheet" href="../static/lib/simditor-2.3.5/styles/simditor-fullscreen.css" />
+
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/beautify-html.js"></script>
+    <script type="text/javascript" src="../static/lib/simditor-2.3.5/scripts/simditor-html.js"></script>
+    <link rel="stylesheet" href="../static/lib/simditor-2.3.5/styles/simditor-html.css" media="screen" charset="utf-8" />
   </head>
   <body>
     <br />
@@ -29,7 +35,14 @@
       var editor = new Simditor({
         textarea: $('#editor'),
         // markdown: true,
-        // toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown']
+        toolbar: ['bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', '|', 'markdown', 'html', '|', 'fullscreen'],
+        upload: {
+          url: '',
+          params: null,
+          fileKey: 'upload_file',
+          connectionCount: 3,
+          leaveConfirm: 'Uploading is in progress, are you sure to leave this page?'
+        }
       });
     </script>
 
