@@ -33,7 +33,7 @@ SimditorMarkdown = (function(superClass) {
 
   SimditorMarkdown.prototype._init = function() {
     SimditorMarkdown.__super__._init.call(this);
-    this.markdownEl = $('<div class="markdown-editor" />').insertBefore(this.editor.body);
+    this.markdownEl = $('<div class="markdown-editor" id="markdown-editor"/>').insertBefore(this.editor.body);
     this.textarea = $('<textarea/>').attr('placeholder', this.editor.opts.placeholder).appendTo(this.markdownEl);
     this.textarea.on('focus', (function(_this) {
       return function(e) {
