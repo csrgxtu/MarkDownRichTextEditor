@@ -36,6 +36,14 @@
         textarea: $('#editor'),
         // markdown: true,
         toolbar: ['title', 'bold', 'italic', '|', 'ol', 'ul', '|', 'blockquote', 'link', 'image', 'hr', '|', 'markdown', 'html', '|', 'fullscreen'],
+
+        upload: {
+          url: '/files',
+          params: null,
+          fileKey: 'upload_file',
+          connectionCount: 3,
+          leaveConfirm: 'Uploading is in progress, are you sure to leave this page?'
+        }
       });
     </script>
 
