@@ -2702,7 +2702,7 @@ Simditor.i18n = {
     'insertColumnRight': '在右边插入列',
     'deleteTable': '删除表格',
     'title': '标题',
-    'normalText': '普通文本',
+    'normalText': '正文',
     'underline': '下划线文字',
     'alignment': '水平对齐',
     'alignCenter': '居中',
@@ -3178,31 +3178,40 @@ TitleButton = (function(superClass) {
 
   TitleButton.prototype._init = function() {
     this.menu = [
+      /*{
+        name: 'h1',
+        text: this._t('title') + ' 1',
+        param: 'h1'
+      },*/ {
+        name: 'h2',
+        text: '小标题',
+        //text: this._t('title') + ' 2',
+        param: 'h2'
+      }, {
+        name: 'h3',
+        text: '说明',
+        //text: this._t('title') + ' 3',
+        param: 'h3'
+      }, /*{
+        name: 'h4',
+        text: this._t('title') + ' 4',
+        param: 'h4'
+      },*/ {
+        name: 'h4',
+        text: '居中',
+        //text: this._t('title') + ' 5',
+        param: 'h4'
+      }, 
       {
         name: 'normal',
         text: this._t('normalText'),
         param: 'p'
-      }, '|', {
-        name: 'h1',
-        text: this._t('title') + ' 1',
-        param: 'h1'
-      }, {
-        name: 'h2',
-        text: this._t('title') + ' 2',
-        param: 'h2'
-      }, {
-        name: 'h3',
-        text: this._t('title') + ' 3',
-        param: 'h3'
-      }, {
-        name: 'h4',
-        text: this._t('title') + ' 4',
-        param: 'h4'
-      }, {
+      }, 
+      {
         name: 'h5',
-        text: this._t('title') + ' 5',
+        text: '图说',
         param: 'h5'
-      }
+      } 
     ];
     return TitleButton.__super__._init.call(this);
   };
@@ -3436,6 +3445,54 @@ ItalicButton = (function(superClass) {
 })(Button);
 
 Simditor.Toolbar.addButton(ItalicButton);
+
+FigButton = (function(superClass) {
+  extend(FigButton, superClass);
+
+  function FigButton() {
+    return FigButton.__super__.constructor.apply(this, arguments);
+  }
+
+  FigButton.prototype.name = 'figcaption';
+
+  FigButton.prototype.icon = 'figcaption';
+
+  FigButton.prototype.htmlTag = 'figcaption';
+
+  FigButton.prototype.disableTag = 'pre';
+
+  FigButton.prototype.shortcut = 'cmd+i';
+
+  FigButton.prototype._init = function() {
+    if (this.editor.util.os.mac) {
+      this.title = this.title + " ( Cmd + i )";
+    } else {
+      this.title = this.title + " ( Ctrl + i )";
+      this.shortcut = 'ctrl+i';
+    }
+    return FigButton.__super__._init.call(this);
+  };
+
+  FigButton.prototype._activeStatus = function() {
+    var active;
+    active = document.queryCommandState('figcaption') === true;
+    this.setActive(active);
+    return this.active;
+  };
+
+  FigButton.prototype.command = function() {
+    document.execCommand('italic');
+    if (!this.editor.util.support.oninput) {
+      this.editor.trigger('valuechanged');
+    }
+    return $(document).trigger('selectionchange');
+  };
+
+  return FigButton;
+
+})(Button);
+
+Simditor.Toolbar.addButton(FigButton);
 
 UnderlineButton = (function(superClass) {
   extend(UnderlineButton, superClass);
