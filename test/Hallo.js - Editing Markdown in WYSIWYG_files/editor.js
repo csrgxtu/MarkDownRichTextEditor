@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
       'halloheadings': {},
       'hallolists': {},
       'halloreundo': {},
-      'hallolink': {},
+      'hallolink': {"link": true, "image": false},
       'halloimage': {}
     },
     toolbar: 'halloToolbarFixed'
